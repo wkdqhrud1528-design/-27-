@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#091b33" />
+  <meta name="description" content="12개 대학과 함께 그리는 미래, 대학도시 천안 — 인터랙티브 프레젠테이션" />
+  <title>대학도시 천안 | 인터랙티브 프레젠테이션</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="app" id="app">
+    <header class="topbar">
+      <a href="#slide-1" class="brand" id="brand" aria-label="첫 번째 슬라이드로"><span class="brand-mark" aria-hidden="true">C<span>✦</span></span><span class="brand-copy"><b>대학도시, 천안</b><small>CHEONAN UNIVERSITY CITY</small></span></a>
+      <nav class="top-nav" aria-label="슬라이드 목차" id="topNav"></nav>
+      <div class="top-actions">
+        <button type="button" class="icon-button" id="overviewButton" aria-label="전체 슬라이드 보기" title="전체 슬라이드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button>
+        <button type="button" class="icon-button" id="notesButton" aria-label="발표 참고사항 보기" title="발표 참고사항"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v5h5M8 12h8M8 16h8"/></svg></button>
+        <button type="button" class="icon-button" id="fullscreenButton" aria-label="전체 화면으로 보기" title="전체 화면"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+      </div>
+    </header>
+    <main class="main">
+      <div class="presentation-head"><div class="eyebrow"><span class="live-dot"></span> INTERACTIVE PRESENTATION <span class="head-sep">/</span> <span id="chapterEyebrow">WELCOME TO CHEONAN</span></div><div class="head-right"><span class="interaction-hint">카드를 클릭해 자세히 보기 <span aria-hidden="true">↗</span></span></div></div>
+      <section class="stage" aria-label="프레젠테이션 화면">
+        <div class="slide-frame" id="slideFrame" tabindex="0" aria-label="슬라이드. 좌우 화살표 키로 이동합니다.">
+          <div class="slide-layer" id="slideLayer"></div>
+          <div class="slide-hotspots" id="hotspotLayer"></div>
+          <div class="slide-loading" id="slideLoading" aria-hidden="true"></div>
+        </div>
+      </section>
+      <div class="control-strip"><div class="meta"><span class="meta-number" id="slideIndex">01</span><span class="meta-divider">/</span><span class="meta-total">06</span><span class="meta-title" id="slideTitle">대학도시, 천안</span></div><div class="navigation"><button type="button" class="nav-button" id="prevButton" aria-label="이전 슬라이드"><span aria-hidden="true">←</span><span class="nav-text">이전</span></button><div class="mini-dots" id="miniDots" aria-label="슬라이드 페이지"></div><button type="button" class="nav-button next" id="nextButton" aria-label="다음 슬라이드"><span class="nav-text">다음</span><span aria-hidden="true">→</span></button></div><div class="utility"><button id="zoomButton" class="text-button" type="button" title="슬라이드 확대"><span aria-hidden="true">⌕</span> 확대</button><button id="autoButton" class="text-button" type="button" aria-pressed="false"><span aria-hidden="true">▶</span> 자동 재생</button></div></div>
+      <div class="progress-track" role="progressbar" aria-label="프레젠테이션 진행률" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" id="progressTrack"><div class="progress-bar" id="progressBar"></div></div>
+      <footer class="footer"><span>12개 대학과 함께 그리는 새로운 가능성</span><span>← → 키보드 이동 <span class="footer-dot">·</span> 터치 스와이프 <span class="footer-dot">·</span> 스크롤 이동</span></footer>
+    </main>
+  </div>
+  <div class="overlay" id="detailOverlay" hidden><div class="overlay-backdrop" data-close="detail"></div><section class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailHeading"><button type="button" class="close-button" data-close="detail" aria-label="닫기">×</button><div class="detail-kicker" id="detailKicker">EXPLORE</div><h2 id="detailHeading"></h2><p id="detailBody"></p><div class="detail-foot">대학도시 천안 <span>✦</span> 연결의 가능성</div></section></div>
+  <div class="overlay" id="overviewOverlay" hidden><div class="overlay-backdrop" data-close="overview"></div><section class="overview-panel" role="dialog" aria-modal="true" aria-labelledby="overviewHeading"><div class="modal-head"><div><div class="detail-kicker">ALL CHAPTERS</div><h2 id="overviewHeading">슬라이드 전체 보기</h2></div><button type="button" class="close-button" data-close="overview" aria-label="닫기">×</button></div><div class="overview-grid" id="overviewGrid"></div></section></div>
+  <div class="overlay" id="notesOverlay" hidden><div class="overlay-backdrop" data-close="notes"></div><section class="notes-panel" role="dialog" aria-modal="true" aria-labelledby="notesHeading"><button type="button" class="close-button" data-close="notes" aria-label="닫기">×</button><div class="detail-kicker">PRESENTER NOTES</div><h2 id="notesHeading">발표 참고사항</h2><p id="notesContent"></p><p class="notes-caution">※ 원본 자료는 콘셉트 중심의 홍보 자료이며, 공식 대학 로고·캠퍼스 소재지 및 관련 명칭은 대외 게시 전에 확인해야 합니다.</p></section></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
